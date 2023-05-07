@@ -1,8 +1,13 @@
 import './App.css'
+import BmiForm from './components/BmiForm'
 
 function App() {
 
-  return
+  return(
+    <>
+      <BmiForm/>
+    </>
+  )
 }
 
 export default App
