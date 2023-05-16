@@ -17,7 +17,8 @@ const schema = yup.object().shape({
  weight: yup.number().required(),
 });
 
-const BmiForm = () => {
+// eslint-disable-next-line react/prop-types
+const BmiForm = (category) => {
  const [height, setHeight] = useState();
  const [weight, setWeight] = useState();
  const [resultBmi, setResultBmi] = useState();
@@ -85,9 +86,9 @@ const BmiForm = () => {
      showModal={showModal}
      {...register("resultBmi")}
      resultBmi={resultBmi}
+     category={category}
     ></ResultModal>
    </form>
-   {/* <output>{resultBmi.toFixed(2)}</output> */}
   </>
  );
 };

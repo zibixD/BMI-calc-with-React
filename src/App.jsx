@@ -52,7 +52,7 @@ function App() {
  return (
   <Box>
    <BmiHeading />
-   <BmiForm onCalculate={calculateBmiHandler} />
+   <BmiForm onCalculate={calculateBmiHandler} category={category} />
    <BmiInfo category={category} />
   </Box>
  );
