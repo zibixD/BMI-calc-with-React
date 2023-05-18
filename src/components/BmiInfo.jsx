@@ -41,7 +41,7 @@ const BmiInfo = (category) => {
        disableGutters
        secondaryAction={
         <IconButton aria-label='comment'>
-         <PopperInfo></PopperInfo>
+         <PopperInfo category={cat} />
         </IconButton>
        }
       >

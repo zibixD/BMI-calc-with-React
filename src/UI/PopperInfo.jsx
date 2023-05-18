@@ -1,14 +1,15 @@
 import { Popper, Box, Fade, Typography } from "@mui/material";
 import { useState } from "react";
 import InfoIcon from "@mui/icons-material/Info";
-
-const PopperInfo = () => {
+// eslint-disable-next-line react/prop-types
+const PopperInfo = (cat) => {
  const [isOpen, setIsOpen] = useState(false);
  const [anchorEl, setAnchorEl] = useState(null);
 
  const clickHandler = (event) => {
   setAnchorEl(event.currentTarget);
   setIsOpen((previousOpen) => !previousOpen);
+  console.log(cat.category.description);
  };
 
  //  const closeHandler = () => setIsOpen(false);
@@ -34,7 +35,7 @@ const PopperInfo = () => {
    >
     {({ TransitionProps }) => <Fade {...TransitionProps} timeout={350}></Fade>}
     <Box sx={{ border: "1px solid black", backgroundColor: "white" }}>
-     <Typography sx={{ p: 2 }}>Popper </Typography>
+     <Typography sx={{ p: 1 }}>{cat.category.description}</Typography>
      {/* nie działa fade, przejście */}
     </Box>
    </Popper>
