@@ -35,6 +35,7 @@ const BmiForm = (category) => {
  const submitHandler = () => {
   setResultBmi((weight / ((height * height) / 10000)).toFixed(2));
   setShowModal(true);
+  console.log(category.category);
  };
 
  return (
@@ -86,7 +87,7 @@ const BmiForm = (category) => {
      showModal={showModal}
      {...register("resultBmi")}
      resultBmi={resultBmi}
-     category={category}
+     category={category.category}
     ></ResultModal>
    </form>
   </>
