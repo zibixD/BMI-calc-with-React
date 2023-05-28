@@ -29,14 +29,19 @@ const BmiInfo = (category) => {
    <Card>
     <Typography variant='h4'>Categories</Typography>
     <List
-     sx={{
-      width: "100%",
-      maxWidth: 360,
-      backgroundColor: "background.paper",
-     }}
+    //  sx={{
+    //   width: "100%",
+    //   maxWidth: 360,
+    //   backgroundColor: "background.paper",
+    //  }}
     >
      {category.category.map((cat) => (
       <ListItem
+       sx={{
+        width: "100%",
+        maxWidth: 360,
+        backgroundColor: "background.paper",
+       }}
        key={cat.id}
        disableGutters
        secondaryAction={
@@ -48,6 +53,7 @@ const BmiInfo = (category) => {
        <ListItemText
         sx={{
          pl: 3,
+         color: "black",
         }}
         primary={cat.title}
        />

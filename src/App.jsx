@@ -1,9 +1,11 @@
-import { Box } from "@mui/material";
 import "./App.css";
 import BmiForm from "./components/BmiForm";
 import BmiHeading from "./components/BmiHeading";
 import BmiInfo from "./components/BmiInfo";
 import { useState } from "react";
+// import { Provider } from "react-redux";
+// import { store, persistor } from "./store/storeMain";
+// import { PersistGate } from "redux-persist/integration/react";
 
 const bmiCategories = [
  {
@@ -62,11 +64,15 @@ function App() {
  };
 
  return (
-  <Box>
+  <>
+   {/* <Provider store={store}>
+   <PersistGate loading={null} persistor={persistor}> */}
    <BmiHeading />
    <BmiForm onCalculate={calculateBmiHandler} category={category} />
    <BmiInfo category={category} />
-  </Box>
+   {/* </PersistGate>
+  </Provider> */}
+  </>
  );
 }
 

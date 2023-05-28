@@ -5,13 +5,12 @@ const Transition = forwardRef(function Transition(props, ref) {
  return <Slide direction='up' ref={ref} {...props} />;
 });
 // eslint-disable-next-line react/prop-types
-const ResultModal = ({ showModal, resultBmi, category }) => {
+const ResultModal = ({ showModal, resultBmi, title }) => {
  const [isOpen, setIsOpen] = useState();
 
  const openHandler = () => {
   if (showModal) {
    setIsOpen(true);
-   console.log(category);
   }
  };
 
@@ -30,14 +29,14 @@ const ResultModal = ({ showModal, resultBmi, category }) => {
       left: "50%",
       transform: "translate(-50%, -50%)",
       width: 600,
-      background: "background.paper",
+      background: "white",
       border: "2px solid #000",
       boxShadow: 24,
       p: 4,
      }}
     >
-     <Typography variant='h2'>{`Twój wskaźnik masy ciała wynosi: ${resultBmi}`}</Typography>
-     <Typography variant='h4'>Twoje BMI wskazuje na: </Typography>
+     <Typography variant='h2'>{`Your BMI rate is : ${resultBmi}`}</Typography>
+     <Typography variant='h4'>{`Your's BMI is in category range:  ${title}`}</Typography>
     </Box>
    </Modal>
   </Box>
