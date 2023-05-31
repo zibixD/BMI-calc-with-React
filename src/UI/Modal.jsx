@@ -17,7 +17,7 @@ const ResultModal = ({ showModal, resultBmi, title }) => {
  const closeHandler = () => setIsOpen(false);
 
  return (
-  <Box>
+  <Box sx={{ display: "flex", justifyContent: "space-around" }}>
    <Button type='submit' onClick={openHandler}>
     submit
    </Button>

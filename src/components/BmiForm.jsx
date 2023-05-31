@@ -69,10 +69,36 @@ const BmiForm = () => {
    }}
   >
    <form onSubmit={handleSubmit(submitHandler)}>
-    <Typography variant='h3'>Calculate your BMI now!</Typography>
-    <FormLabel id='radio-btn'>Gender</FormLabel>
-    <RadioGroup aria-labelledby='radio-btn' {...register("gender")}>
+    <Typography
+     variant='h3'
+     sx={{
+      fontSize: { xs: "2rem", sm: "3rem" },
+     }}
+    >
+     Calculate your BMI now!
+    </Typography>
+    <FormLabel
+     id='radio-btn'
+     sx={{
+      display: "flex",
+      flexDirection: "column",
+      textAlign: "center",
+     }}
+    >
+     Select your gender
+    </FormLabel>
+    <RadioGroup
+     aria-labelledby='radio-btn'
+     {...register("gender")}
+     sx={{
+      display: "flex",
+      flexDirection: "row",
+      //   { xs: "column", sm: "row" },
+      justifyContent: "space-evenly",
+     }}
+    >
      <FormControlLabel
+      sx={{ width: "30%" }}
       id='male'
       name='gender'
       value='male'
@@ -81,6 +107,7 @@ const BmiForm = () => {
       required
      />
      <FormControlLabel
+      sx={{ width: "30%" }}
       id='female'
       name='gender'
       value='female'
@@ -89,26 +116,40 @@ const BmiForm = () => {
       required
      />
     </RadioGroup>
-    <TextField
-     {...register("height")}
-     label='Height'
-     type='number'
-     sx={{ m: 1, width: "25ch " }}
-     InputProps={{
-      endAdornment: <InputAdornment position='end'>Cm</InputAdornment>,
+    <Box
+     sx={{
+      display: "flex",
+      flexDirection: { xs: "column", sm: "row" },
+      justifyContent: "space-evenly",
      }}
-     onChange={(event) => setHeight(event.target.value)}
-    ></TextField>
-    <TextField
-     {...register("weight")}
-     label='Weight'
-     type='number'
-     sx={{ m: 1, width: "25ch" }}
-     InputProps={{
-      endAdornment: <InputAdornment position='end'>Kg</InputAdornment>,
-     }}
-     onChange={(event) => setWeight(event.target.value)}
-    ></TextField>
+    >
+     <TextField
+      {...register("height")}
+      label='Height'
+      type='number'
+      sx={{
+       m: 1,
+       width: { xs: "95%", sm: "25ch " },
+      }}
+      InputProps={{
+       endAdornment: <InputAdornment position='end'>Cm</InputAdornment>,
+      }}
+      onChange={(event) => setHeight(event.target.value)}
+     ></TextField>
+     <TextField
+      {...register("weight")}
+      label='Weight'
+      type='number'
+      sx={{
+       m: 1,
+       width: { xs: "95%", sm: "25ch " },
+      }}
+      InputProps={{
+       endAdornment: <InputAdornment position='end'>Kg</InputAdornment>,
+      }}
+      onChange={(event) => setWeight(event.target.value)}
+     ></TextField>
+    </Box>
     <ResultModal
      onSubmit={(weight, height) =>
       setResultBmi(weight / ((height * height) / 10000))

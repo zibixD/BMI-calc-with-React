@@ -4,16 +4,16 @@ const BmiHeading = () => {
  return (
   <Box
    sx={{
-    weight: "100%",
     backgroundColor: "white",
-    border: "5px solid black",
-    textAlign: "cemter",
+    boxShadow: 8,
    }}
   >
    <Typography
     variant='h2'
     sx={{
      textAlign: "center",
+     fontSize: { xs: "3rem", sm: "3.7em" },
+     p: 2,
     }}
    >
     Welcome to your BMI calculator!
